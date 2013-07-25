@@ -28,6 +28,7 @@ module Flatware
         fireable.until_fired task do |job|
           log 'working!'
           job.worker = id
+          Sink.started job
           Cucumber.run job.id, job.args
           Sink.finished job
           report_for_duty
