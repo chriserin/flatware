@@ -38,6 +38,7 @@ module Flatware
           exit 1
         end
 
+        formatter.jobs jobs
         before_firing { listen }
         Flatware.close
       end
